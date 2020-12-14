@@ -50,7 +50,7 @@ class Form extends Component {
             <form>
                 {/* TODO - Logic for returning a form element with labels and inputs for link name and URL */}
                 <label for="name">Name</label><br/>
-                <input type="text" id="name" value={this.state.name} onChange={this.handleChange}></input><br/>
+                <input type="text" id="name" name="name" value={this.state.name} onChange={this.handleChange}></input><br/>
                 <label for="url"> URL </label><br/>
                 <input type="text" id="url" name="url" value={this.state.url} onChange={this.handleChange}></input><br/>
                 <input type="submit" value="Submit" onClick = {this.onFormSubmit}/>
