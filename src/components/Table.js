@@ -20,7 +20,7 @@ const TableBody = props => {
         return (
             <tr key={index}>
                 <td>{row.name}</td>
-                <td><a href={row.URL}>{row.URL}</a></td>
+                <td><a href={row.url}>{row.url}</a></td>
                 <td><button onClick={() => props.removeLink(index)}>Delete</button></td>
             </tr>
         );
