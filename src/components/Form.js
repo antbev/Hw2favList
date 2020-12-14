@@ -8,12 +8,25 @@ class Form extends Component {
             TODO - set initial state for link name and URL 
 
         */
+       this.state ={
+           name: '',
+           url: ''
+       }
+       this.handleChange = this.handleChange.bind(this);
+       this.onFormSubmit = this.onFormSubmit.bind(this);
     }
 
     handleChange = event => {
         /*
             TODO - Logic for changing state based on form changes
         */
+       const target = event.target;
+       const value = target.value;
+       const name = target.name;
+
+       this.setState({
+          [name]: value 
+       });
     }
 
     onFormSubmit = (event) => {
@@ -23,7 +36,12 @@ class Form extends Component {
         /*
             TODO - Logic for calling props to handle submission and setting state changes
         */
+       this.setState({
+           name: "",
+           url: ""
+       });
 
+       this.props.handleSubmit(this.state);
     }
 
     render() {
@@ -31,6 +49,10 @@ class Form extends Component {
         return(
             <form>
                 {/* TODO - Logic for returning a form element with labels and inputs for link name and URL */}
+                <label>Name</label>
+                <input type="text"></input>
+                <label>URL</label>
+                <button>Submit</button>
             </form>
         )
     
